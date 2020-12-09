@@ -12,19 +12,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { withStyles } from '@material-ui/core/styles';
+import { withRouter } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -46,14 +35,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
-  const classes = useStyles();
+class SignIn extends React.Component
+{
+  constructor(props){
+    super(props);
+  }
 
-  const handleOnSubmit = () => {
-    this.props.history.push("/dashboard");
-    console.log("this,oeios", this.props.history);
-    console.log("Avinash");
+   handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.history.push('/Dashboard');
+    console.log("Logged IN");
   };
+
+  render(){
+
+    const { classes } = this.props;
 
   return (
     <Container component="main" maxWidth="xs">
@@ -65,7 +61,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={this.handleSubmit} >
           <TextField
             variant="outlined"
             margin="normal"
@@ -98,7 +94,6 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={handleOnSubmit}
           >
             Sign In
           </Button>
@@ -117,8 +112,19 @@ export default function SignIn() {
         </form>
       </div>
       <Box mt={8}>
-        <Copyright />
+      <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
       </Box>
     </Container>
   );
 }
+}
+
+
+export default withRouter(withStyles(useStyles)(SignIn))
