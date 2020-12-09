@@ -10,7 +10,7 @@ using FuzzBrain.Models;
 
 namespace FuzzBrain.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Admin, User")]
     public class EmployeesController : Controller
     {
         private FuzzBrainDBContext db = new FuzzBrainDBContext();
