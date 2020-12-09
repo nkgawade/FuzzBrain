@@ -13,10 +13,10 @@ namespace FuzzBrain.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FuzzBrainEntities : DbContext
+    public partial class FuzzBrainDBContext : DbContext
     {
-        public FuzzBrainEntities()
-            : base("name=FuzzBrainEntities")
+        public FuzzBrainDBContext()
+            : base("name=FuzzBrainDBContext")
         {
         }
     
