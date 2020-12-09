@@ -15,6 +15,8 @@ import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 import { withRouter } from 'react-router-dom';
 
+import axios from 'axios';
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -39,12 +41,43 @@ class SignIn extends React.Component
 {
   constructor(props){
     super(props);
+    this.state ={
+      UserName : '',
+      UserPassword: ''
+    }
+  }
+
+  onChangeName = (event) =>{
+    this.setState({
+      UserName: event.target.value
+    });
+  }
+
+  onChangePassword = (event) =>{
+    this.setState({
+      UserPassword: event.target.value
+    });
   }
 
    handleSubmit = (event) => {
+     if(this.state.UserName != '' && this.state.UserPassword != '' ){
+      event.preventDefault();
+
+      const model = {
+        UserName: this.state.UserName,
+        UserPassword: this.state.UserPassword
+      };
+  
+      
+      axios.post(`http://localhost:56855/Acccounts/Login`, { model })
+        .then(res => {
+          console.log(res);
+          console.log(res.data);
+        })
+        this.props.history.push('/Dashboard');
+     }
+
     event.preventDefault();
-    this.props.history.push('/Dashboard');
-    console.log("Logged IN");
   };
 
   render(){
@@ -72,6 +105,7 @@ class SignIn extends React.Component
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={this.onChangeName}
           />
           <TextField
             variant="outlined"
@@ -83,6 +117,7 @@ class SignIn extends React.Component
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={this.onChangePassword}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
