@@ -7,7 +7,7 @@ export default class DashBoard extends React.Component {
 
   render(){
     return(
-      <div>DashBoard</div>
+        <div>DashBoard</div>
     )
   }
 }

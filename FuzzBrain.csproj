@@ -131,6 +131,28 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
+    <Content Include="wwwroot\public\favicon.ico" />
+    <Content Include="wwwroot\public\index.html" />
+    <Content Include="wwwroot\public\logo192.png" />
+    <Content Include="wwwroot\public\logo512.png" />
+    <Content Include="wwwroot\public\robots.txt" />
+    <Content Include="wwwroot\src\App.css" />
+    <Content Include="wwwroot\src\App.js" />
+    <Content Include="wwwroot\src\App.test.js" />
+    <Content Include="wwwroot\src\Components\ClippedDrawer.jsx" />
+    <Content Include="wwwroot\src\Components\Common\Footer.jsx" />
+    <Content Include="wwwroot\src\Components\Common\Header.jsx" />
+    <Content Include="wwwroot\src\Components\CustomizedTabs.jsx" />
+    <Content Include="wwwroot\src\Components\DashBoard\DashBoard.jsx" />
+    <Content Include="wwwroot\src\Components\HeaderAppBar.jsx" />
+    <Content Include="wwwroot\src\Components\Login\Login.jsx" />
+    <Content Include="wwwroot\src\Components\QuestionCard.jsx" />
+    <Content Include="wwwroot\src\Components\QuestionsGrid.jsx" />
+    <Content Include="wwwroot\src\index.css" />
+    <Content Include="wwwroot\src\index.js" />
+    <Content Include="wwwroot\src\logo.svg" />
+    <Content Include="wwwroot\src\reportWebVitals.js" />
+    <Content Include="wwwroot\src\setupTests.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -197,6 +219,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="wwwroot\public\manifest.json" />
+    <Content Include="wwwroot\.eslintcache" />
+    <Content Include="wwwroot\.gitignore" />
+    <Content Include="wwwroot\package-lock.json" />
+    <Content Include="wwwroot\package.json" />
+    <Content Include="wwwroot\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./Components/Common/Header.jsx";
 import SignIn from './Components/Login/Login.jsx';
 import DashBoard from './Components/DashBoard/DashBoard.jsx';
+import QuestionsGrid from './Components/QuestionsGrid.jsx';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Switch>
         <Route exact path="/"><SignIn /></Route>
         <Route exact path="/Dashboard"><DashBoard /></Route>
+        <Route exact path="/Questions"><QuestionsGrid /></Route>
       </Switch>
     </BrowserRouter>
     </div>
