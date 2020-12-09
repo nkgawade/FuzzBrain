@@ -136,6 +136,8 @@
     <Content Include="wwwroot\src\Components\DashBoard\DashBoard.jsx" />
     <Content Include="wwwroot\src\Components\HeaderAppBar.jsx" />
     <Content Include="wwwroot\src\Components\Login\Login.jsx" />
+    <Content Include="wwwroot\src\Components\QuestionCard.jsx" />
+    <Content Include="wwwroot\src\Components\QuestionsGrid.jsx" />
     <Content Include="wwwroot\src\index.css" />
     <Content Include="wwwroot\src\index.js" />
     <Content Include="wwwroot\src\logo.svg" />
