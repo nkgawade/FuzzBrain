@@ -32,16 +32,18 @@
                     {
                         if (User.IsInRole("Admin"))
                         {
-                            <li>@Html.ActionLink("Employees", "Index", "Employees")</li>                                    
+                            <li>@Html.ActionLink("Employees", "Index", "Employees")</li>
+
                             <li>@Html.ActionLink("Departments", "Index", "Departments")</li>
                             <li>@Html.ActionLink("Teams", "Index", "Teams")</li>
-                            <li>@Html.ActionLink("POC", "Index", "POCs")</li>                                                        
+                            <li>@Html.ActionLink("POC", "Index", "POCs")</li>
+
                         }
 
                         if (User.IsInRole("User"))
                         {
                             <li>
-                                <a href=@Html.ActionLink("POC", "Index", "POCs")>POC</a>                                
+                                <a href=@Html.ActionLink("POC", "Index", "POCs")>POC</a>
                             </li>
 
                         }
@@ -58,18 +60,21 @@
                 <div class="pull-right">
                     <ul class="nav pull-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, User <span class="glyphicon glyphicon-user"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, @User.Identity.Name <span class="glyphicon glyphicon-user"></span></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <h5 class="card-title">
-                                        Points Earned -
-                                        <strong>
-                                            @(Session["PointsEarned"] as string)
-                                        </strong>
-                                    </h5>
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Hello - @User.Identity.Name</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">
+                                                Points Earned - <strong>
+                                                    @(Session["PointsEarned"] as string)
+                                                </strong>
+                                            </h6>
+                                            <i class="icon-off"></i>@Html.ActionLink("Logout", "Logout", "Accounts")
+                                        </div>
+                                    </div>
                                 </li>
-                                <li class="divider"></li>
-                                <li><i class="icon-off"></i> @Html.ActionLink("Logout", "Logout", "Accounts")</li>
                             </ul>
                         </li>
                     </ul>
