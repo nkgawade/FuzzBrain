@@ -32,35 +32,10 @@
                     {
                         if (User.IsInRole("Admin"))
                         {
-                            <li>
-                                <a href="#">Employees</a>
-                                <ul>
-                                    <li>@Html.ActionLink("Get Employee List", "Index", "Employees")</li>
-                                    <li>@Html.ActionLink("Add Employee", "Create", "Employees")</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Departments</a>
-                                <ul>
-                                    <li>@Html.ActionLink("Get Department List", "Index", "Departments")</li>
-                                    <li>@Html.ActionLink("Add Department", "Create", "Departments")</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Teams</a>
-                                <ul>
-                                    <li>@Html.ActionLink("Get Team List", "Index", "Teams")</li>
-                                    <li>@Html.ActionLink("Add Team", "Create", "Teams")</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">POC</a>
-                                <ul>
-                                    <li>@Html.ActionLink("Get POC List", "Index", "POCs")</li>
-                                    <li>@Html.ActionLink("Add POC", "Create", "POCs")</li>
-                                </ul>
-                            </li>
-
+                            <li>@Html.ActionLink("Get Employee List", "Index", "Employees")</li>                                    
+                            <li>@Html.ActionLink("Get Department List", "Index", "Departments")</li>
+                            <li>@Html.ActionLink("Get Team List", "Index", "Teams")</li>
+                            <li>@Html.ActionLink("Get POC List", "Index", "POCs")</li>                                                        
                         }
 
                         if (User.IsInRole("User"))
