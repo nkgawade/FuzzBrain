@@ -67,9 +67,15 @@
                                         <div class="card-body">
                                             <h5 class="card-title">Hello - @User.Identity.Name</h5>
                                             <h6 class="card-subtitle mb-2 text-muted">
-                                                Points Earned - <strong>
-                                                    @(Session["PointsEarned"] as string)
-                                                </strong>
+                                                Points Earned -
+                                                @if (Session["PointsEarned"] == null || Session["PointsEarned"] as string == "")
+                                                {
+                                                    <strong>0</strong>
+                                                }
+                                                else
+                                                {
+                                                    <strong>@(Session["PointsEarned"] as string)</strong>
+                                                }
                                             </h6>
                                             <i class="icon-off"></i>@Html.ActionLink("Logout", "Logout", "Accounts")
                                         </div>
