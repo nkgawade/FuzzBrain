@@ -131,9 +131,13 @@
     <Content Include="Content\styles.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\DistinctElements.png" />
     <Content Include="Images\finalrps-classypage.jpg" />
+    <Content Include="Images\firstcomefirstserve.png" />
     <Content Include="Images\ReactLogo.png" />
+    <Content Include="Images\RepetitiveAddition.png" />
     <Content Include="Images\Rock-Paper-Scissors.jpg" />
+    <Content Include="Images\vocab-10256-counting.jpg" />
     <Content Include="Models\FuzzBrainDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FuzzBrainDB.Context.cs</LastGenOutput>
