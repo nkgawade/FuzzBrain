@@ -7,3 +7,4 @@
 /obj/Release
 /.vs
 .vs/FuzzBrain/v16/.suo
+/App_Start/BundleConfig.cs
