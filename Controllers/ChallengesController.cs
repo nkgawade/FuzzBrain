@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FuzzBrain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,22 @@ namespace FuzzBrain.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult GetChallenge(int id)
+        {
+            List<QuestionModel> questionList = QuestionModel.GetReactQuestionList();
+            ViewData["QuestionId"] = id;
+            if (id == 1)
+            {
+                return View(questionList);
+            }
+            else if (id == 2)
+            {
+                return View();
+            }
+
+            return View(questionList);
         }
     }
 }

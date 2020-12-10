@@ -1,0 +1,94 @@
+﻿@model IEnumerable<FuzzBrain.Models.QuestionModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if ((int)ViewData["QuestionId"] == 1)
+{
+    foreach (var item in Model)
+    {
+        <div class="container mt-5">
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-10 col-lg-10">
+                    <div class="border">
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                                <span>(@Html.DisplayFor(modelItem => item.QuestionId) of 5)</span>
+                            </div>
+                        </div>
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q.</h3>
+                                <h5 class="mt-1 ml-2">@Html.DisplayFor(modelItem => item.Question)</h5>
+                            </div>
+                            <div class="ans ml-2">
+                                <label class="radio">
+                                    <input type="radio" name="brazil" value="brazil"> <span>@Html.DisplayFor(modelItem => item.Option1)</span>
+                                </label>
+                            </div>
+                            <div class="ans ml-2">
+                                <label class="radio">
+                                    <input type="radio" name="Germany" value="Germany"> <span>@Html.DisplayFor(modelItem => item.Option2)</span>
+                                </label>
+                            </div>
+                            <div class="ans ml-2">
+                                <label class="radio">
+                                    <input type="radio" name="Indonesia" value="Indonesia"> <span>@Html.DisplayFor(modelItem => item.Option3)</span>
+                                </label>
+                            </div>
+                            <div class="ans ml-2">
+                                <label class="radio">
+                                    <input type="radio" name="Russia" value="Russia"> <span>@Html.DisplayFor(modelItem => item.Option4)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div style="margin-top: 15px;">
+        <button type="button" class="btn btn-secondary btn-lg btn-block" onClick='redirectOnClick()'>Submit</button>
+    </div>
+}
+
+@if ((int)ViewData["QuestionId"] == 1)
+{
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10 col-lg-10">
+                <div class="border">
+                    <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                            <span>(1 of 1)</span>
+                        </div>
+                    </div>
+                    <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row align-items-center question-title">
+                            <h3 class="text-danger">Q.</h3>
+                            <h5 class="mt-1 ml-2">The RPS world championship is here. Here two Players A and B play the games. 
+                            You need to determine who wins.</h5>
+                        </div>
+                        <div class="ans ml-2">
+                            <label class="radio">
+                                <input type="radio" name="brazil" value="brazil"> <span>Avi</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<script>
+    function redirectOnClick() {
+        document.location = '/Challenges';
+    }
+</script>

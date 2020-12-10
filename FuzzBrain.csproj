@@ -126,11 +126,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\cardstyles.css" />
+    <Content Include="Content\questionsstyles.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\styles.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\finalrps-classypage.jpg" />
     <Content Include="Images\ReactLogo.png" />
+    <Content Include="Images\Rock-Paper-Scissors.jpg" />
     <Content Include="Models\FuzzBrainDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FuzzBrainDB.Context.cs</LastGenOutput>
@@ -193,7 +196,6 @@
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\ChallengesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
-    <Compile Include="Controllers\ChallengeController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\POCsController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
@@ -224,6 +226,7 @@
     <Compile Include="Models\POC.cs">
       <DependentUpon>FuzzBrainDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\QuestionModel.cs" />
     <Compile Include="Models\RoleMaster.cs">
       <DependentUpon>FuzzBrainDB.tt</DependentUpon>
     </Compile>
@@ -279,8 +282,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\LoginLayout.cshtml" />
-    <Content Include="Views\Challenge\Index.cshtml" />
     <Content Include="Views\Shared\ChallengeLayout.cshtml" />
+    <Content Include="Views\Challenges\GetChallenge.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
