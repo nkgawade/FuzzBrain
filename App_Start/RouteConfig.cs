@@ -18,6 +18,18 @@ namespace FuzzBrain
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Employees", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Login",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Accounts", action = "Login"}
+            );
+
+            routes.MapRoute(
+                name: "SignUp",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Accounts", action = "SignUp"}
+            );
         }
     }
 }
