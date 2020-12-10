@@ -130,6 +130,7 @@
     <Content Include="Content\styles.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\ReactLogo.png" />
     <Content Include="Models\FuzzBrainDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FuzzBrainDB.Context.cs</LastGenOutput>
