@@ -22,7 +22,7 @@ namespace FuzzBrain.Controllers
                 if (isValidUser)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false);
-                    return RedirectToAction("Index", "Employees");
+                    return RedirectToAction("GetChallenges", "Challenges");
                 }
 
                 ModelState.AddModelError(string.Empty, "Invalid Username or Password");

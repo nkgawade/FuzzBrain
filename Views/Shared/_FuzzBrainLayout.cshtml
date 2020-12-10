@@ -24,8 +24,47 @@
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Get Employee List", "Index", "Employees")</li>
-                        <li>@Html.ActionLink("Add Employee", "Create", "Employees")</li>
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employees</a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Get Employee List", "Index", "Employees")</li>
+                                    <li>@Html.ActionLink("Add Employee", "Create", "Employees")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Departments</a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Get Department List", "Index", "Departments")</li>
+                                    <li>@Html.ActionLink("Add Department", "Create", "Departments")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teams</a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Get Team List", "Index", "Teams")</li>
+                                    <li>@Html.ActionLink("Add Team", "Create", "Teams")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">POC</a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Get POC List", "Index", "POCs")</li>
+                                    <li>@Html.ActionLink("Add POC", "Create", "POCs")</li>
+                                </ul>
+                            </li>
+
+                        }
+
+                        if (User.IsInRole("User"))
+                        {                            
+                            <li>
+                                <a href=@Html.ActionLink("Get POC List", "Index", "POCs")>POC</a>                                
+                            </li>
+
+                        }
+
                         <li><a>Hello - @User.Identity.Name</a></li>
                         <li>@Html.ActionLink("Logout", "Logout", "Accounts")</li>
                     }
