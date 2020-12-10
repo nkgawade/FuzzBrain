@@ -30,6 +30,12 @@ namespace FuzzBrain
                 url: "{controller}/{action}",
                 defaults: new { controller = "Accounts", action = "SignUp"}
             );
+
+            routes.MapRoute(
+                name: "AssignPOC",
+                url: "{controller}/{action}",
+                defaults: new { controller = "POCs", action = "AssignPOC" }
+            );
         }
     }
 }

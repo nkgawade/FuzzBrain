@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="DepartmentId" />
           </Key>
-          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
         </EntityType>
@@ -17,7 +17,7 @@
           <Key>
             <PropertyRef Name="EmployeeId" />
           </Key>
-          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Designation" Type="nvarchar" MaxLength="50" />
           <Property Name="TeamId" Type="int" />
@@ -26,7 +26,7 @@
           <Key>
             <PropertyRef Name="POCID" />
           </Key>
-          <Property Name="POCID" Type="int" Nullable="false" />
+          <Property Name="POCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="1000" />
           <Property Name="Complexity" Type="varchar" MaxLength="10" />
@@ -43,7 +43,7 @@
           <Key>
             <PropertyRef Name="TeamId" />
           </Key>
-          <Property Name="TeamId" Type="int" Nullable="false" />
+          <Property Name="TeamId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="DepartmentId" Type="int" Nullable="false" />

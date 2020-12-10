@@ -9,13 +9,13 @@ using System.Web.Mvc;
 using FuzzBrain.Models;
 
 namespace FuzzBrain.Controllers
-{
-    [Authorize(Roles = "Admin,User")]
+{    
     public class POCsController : Controller
     {
         private FuzzBrainDBContext db = new FuzzBrainDBContext();
 
         // GET: POCs
+        [Authorize(Roles = "Admin,User")]
         public ActionResult Index()
         {
             var pOCs = db.POCs.Include(p => p.Employee);
@@ -23,6 +23,7 @@ namespace FuzzBrain.Controllers
         }
 
         // GET: POCs/Details/5
+        [Authorize(Roles = "Admin,User")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +39,7 @@ namespace FuzzBrain.Controllers
         }
 
         // GET: POCs/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeId", "Name");
@@ -49,6 +51,7 @@ namespace FuzzBrain.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "POCID,Title,Description,Complexity,EmployeeId")] POC pOC)
         {
             if (ModelState.IsValid)
@@ -63,6 +66,7 @@ namespace FuzzBrain.Controllers
         }
 
         // GET: POCs/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,6 +87,7 @@ namespace FuzzBrain.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "POCID,Title,Description,Complexity,EmployeeId")] POC pOC)
         {
             if (ModelState.IsValid)
@@ -96,6 +101,7 @@ namespace FuzzBrain.Controllers
         }
 
         // GET: POCs/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -113,12 +119,27 @@ namespace FuzzBrain.Controllers
         // POST: POCs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             POC pOC = db.POCs.Find(id);
             db.POCs.Remove(pOC);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // POST: POCs/AssignPOC/5
+        [HttpPost, ActionName("AssignPOC")]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,User")]
+        public ActionResult AssignPOC(int id)
+        {            
+            POC pOC = db.POCs.Find(id);
+            if (pOC == null)
+            {
+                return HttpNotFound();
+            }
+            return View(pOC);
         }
 
         protected override void Dispose(bool disposing)

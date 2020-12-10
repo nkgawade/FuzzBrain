@@ -191,7 +191,6 @@
     <Content Include="wwwroot\src\index.js" />
     <Content Include="wwwroot\src\logo.svg" />
     <Content Include="wwwroot\src\reportWebVitals.js" />
-    <Content Include="wwwroot\src\setupProxy.js" />
     <Content Include="wwwroot\src\setupTests.js" />
   </ItemGroup>
   <ItemGroup>

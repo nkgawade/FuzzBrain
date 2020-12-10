@@ -42,10 +42,7 @@
 
                         if (User.IsInRole("User"))
                         {
-                            <li>
-                                <a href=@Html.ActionLink("POC", "Index", "POCs")>POC</a>
-                            </li>
-
+                            <li>@Html.ActionLink("POC", "Index", "POCs")</li>
                         }
                     }
                     else
