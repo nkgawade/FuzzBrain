@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace FuzzBrain.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,User")]
     public class ChallengesController : Controller
     {
         // GET: Challenges
