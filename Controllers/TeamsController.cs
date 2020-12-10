@@ -10,6 +10,7 @@ using FuzzBrain.Models;
 
 namespace FuzzBrain.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TeamsController : Controller
     {
         private FuzzBrainDBContext db = new FuzzBrainDBContext();
