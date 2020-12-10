@@ -5,8 +5,13 @@ using System.Web.Security;
 
 namespace FuzzBrain.Controllers
 {
-    public class AcccountsController : Controller
+    public class AccountsController : Controller
     {
+        public ActionResult Login()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Login(UserModel model)
         {
