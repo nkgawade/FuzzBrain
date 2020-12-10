@@ -33,8 +33,8 @@ namespace FuzzBrain
 
             routes.MapRoute(
                 name: "AssignPOC",
-                url: "{controller}/{action}",
-                defaults: new { controller = "POCs", action = "AssignPOC" }
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "POCs", action = "AssignPOC", id = UrlParameter.Optional }
             );
         }
     }

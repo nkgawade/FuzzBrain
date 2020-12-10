@@ -135,11 +135,9 @@ namespace FuzzBrain.Controllers
         public ActionResult AssignPOC(int id)
         {            
             POC pOC = db.POCs.Find(id);
-            if (pOC == null)
-            {
-                return HttpNotFound();
-            }
-            return View(pOC);
+            db.POCs.Add(pOC);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

@@ -48,12 +48,22 @@
 <p>
     @if (User.IsInRole("Admin"))
     {
-        @Html.ActionLink("Edit", "Edit", new { id = Model.POCID }) 
-        @Html.ActionLink("Assign me", "AssignPOC", new { id = Model.POCID }) 
-        @Html.ActionLink("Back to List", "Index")
+        <span>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.POCID }) |
+        </span>
+        <span>
+            @Html.ActionLink("Assign me", "AssignPOC", new { id = Model.POCID }) |
+        </span>
+        <span>
+            @Html.ActionLink("Back to List", "Index")
+        </span>
     }
     else{
-        @Html.ActionLink("Assign me", "AssignPOC", new { id = Model.POCID }) 
-        @Html.ActionLink("Back to List", "Index")
+        <span>
+            @Html.ActionLink("Assign me", "AssignPOC", new { id = Model.POCID }) |
+        </span>
+        <span>
+            @Html.ActionLink("Back to List", "Index")
+        </span>
     }
 </p>
