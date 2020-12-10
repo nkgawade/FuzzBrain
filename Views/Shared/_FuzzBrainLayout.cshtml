@@ -32,16 +32,16 @@
                     {
                         if (User.IsInRole("Admin"))
                         {
-                            <li>@Html.ActionLink("Get Employee List", "Index", "Employees")</li>
-                            <li>@Html.ActionLink("Get Department List", "Index", "Departments")</li>
-                            <li>@Html.ActionLink("Get Team List", "Index", "Teams")</li>
-                            <li>@Html.ActionLink("Get POC List", "Index", "POCs")</li>
+                            <li>@Html.ActionLink("Employees", "Index", "Employees")</li>                                    
+                            <li>@Html.ActionLink("Departments", "Index", "Departments")</li>
+                            <li>@Html.ActionLink("Teams", "Index", "Teams")</li>
+                            <li>@Html.ActionLink("POC", "Index", "POCs")</li>                                                        
                         }
 
                         if (User.IsInRole("User"))
                         {
                             <li>
-                                <a href=@Html.ActionLink("Get POC List", "Index", "POCs")>POC</a>
+                                <a href=@Html.ActionLink("POC", "Index", "POCs")>POC</a>                                
                             </li>
 
                         }
