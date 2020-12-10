@@ -4,8 +4,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 
 namespace FuzzBrain.Controllers
-{
-    [Authorize(Roles = "Admin")]
+{   
     public class AccountsController : Controller
     {
         public ActionResult Login()
