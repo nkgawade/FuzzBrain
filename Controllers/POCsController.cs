@@ -10,6 +10,7 @@ using FuzzBrain.Models;
 
 namespace FuzzBrain.Controllers
 {
+    [Authorize(Roles = "Admin,User")]
     public class POCsController : Controller
     {
         private FuzzBrainDBContext db = new FuzzBrainDBContext();
