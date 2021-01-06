@@ -1,11 +1,11 @@
 ﻿@model FuzzBrain.Models.POC
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Assign POC";
     Layout = "~/Views/Shared/_FuzzBrainLayout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Assign POC</h2>
 
 <div>
     <h4>POC</h4>
@@ -47,29 +47,17 @@
 </div>
 <p>
     @Html.HiddenFor(model => model.POCID)
-    @if (User.IsInRole("Admin"))
+    
+    @using (Html.BeginForm())
     {
-        <span>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.POCID }) |
-        </span>
-        <span>
-            @Html.ActionLink("Assign", "AssignPOC", new { id = Model.POCID }) |
-        </span>
-        <span>
+        <div class="form-actions no-color">
+            <input id="assignMe" type="submit" value="Assign me" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
-        </span>
-    }
-    else
-    {
-        <span>
-            @Html.ActionLink("Assign", "AssignPOC", new { id = Model.POCID }) |
-        </span>
-        <span>
-            @Html.ActionLink("Back to List", "Index")
-        </span>}
+        </div>
+    }    
 </p>
 
-@*<script>
+<script>
     $(document).ready(function () {
         $("#assignMe").click(function (e) {
             var pocID = $("#POCID").val();
@@ -84,4 +72,4 @@
             });
         });
     });
-</script>*@
+</script>

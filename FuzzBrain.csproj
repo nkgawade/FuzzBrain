@@ -287,6 +287,7 @@
     <Content Include="Views\Shared\LoginLayout.cshtml" />
     <Content Include="Views\Shared\ChallengeLayout.cshtml" />
     <Content Include="Views\Challenges\GetChallenge.cshtml" />
+    <Content Include="Views\POCs\AssignPOC.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -128,16 +128,36 @@ namespace FuzzBrain.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: POCs/AssignPOC/5                
+        [Authorize(Roles = "Admin,User")]
+        public ActionResult AssignPOC(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            POC pOC = db.POCs.Find(id);
+            if (pOC == null)
+            {
+                return HttpNotFound();
+            }
+            return View(pOC);
+        }
+
         // POST: POCs/AssignPOC/5
-        [HttpPost, ActionName("AssignPOC")]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ActionName("AssignPOC")]        
         [Authorize(Roles = "Admin,User")]
         public ActionResult AssignPOC(int id)
         {            
             POC pOC = db.POCs.Find(id);
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = db.Users.SingleOrDefault(usr => usr.UserName == User.Identity.Name);
+                pOC.Users.Add(user);
+            }                
             db.POCs.Add(pOC);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return View(pOC);// RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

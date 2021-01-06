@@ -48,9 +48,15 @@
             <td>
                 @if (User.IsInRole("Admin"))
                 {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.POCID }) 
-                    @Html.ActionLink("Details", "Details", new { id = item.POCID }) 
+                <span>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.POCID }) |
+                </span>
+                <span>
+                    @Html.ActionLink("Details", "Details", new { id = item.POCID }) |
+                </span>
+                <span>
                     @Html.ActionLink("Delete", "Delete", new { id = item.POCID })
+                </span>
                 }
                 else{
                     @Html.ActionLink("Details", "Details", new { id = item.POCID })
